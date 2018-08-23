@@ -12,10 +12,12 @@ const fs = require('fs');
 const path = require('path');
 const cp = require('child_process');
 
+const rootDir = path.join('node_modules/create-react-app/tasks', '..');
+
 const cleanup = () => {
   console.log('Cleaning up.');
   // Reset changes made to package.json files.
-  cp.execSync(`git checkout -- packages/*/package.json`);
+  cp.execSync(`git checkout -- ${rootDir}/packages/*/package.json`);
   // Uncomment when snapshot testing is enabled by default:
   // rm ./template/src/__snapshots__/App.test.js.snap
 };
@@ -58,7 +60,6 @@ if (gitStatus.trim() !== '') {
   process.exit(1);
 }
 
-const rootDir = path.join(__dirname, '..');
 const packagesDir = path.join(rootDir, 'packages');
 const packagePathsByName = {};
 fs.readdirSync(packagesDir).forEach(name => {
