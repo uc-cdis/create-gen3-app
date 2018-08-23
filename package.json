@@ -1,0 +1,15 @@
+{
+  "name": "create-gen3-app",
+  "version": "1.0.0",
+  "description": "Create Gen3 apps without configuration.",
+  "main": "index.js",
+  "scripts": {
+    "create-gen3-app": "node cga.js",
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^1.5.2"
+  }
+}
