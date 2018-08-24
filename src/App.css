@@ -3,5 +3,7 @@
 .app {
   margin: 20px 20px;
   display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
 }
