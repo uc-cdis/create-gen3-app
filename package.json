@@ -1,5 +1,5 @@
 {
-  "name": "create-gen3-app",
+  "name": "@gen3/create-app",
   "version": "1.0.0",
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
