@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
+  "bin": "./index.js",
   "scripts": {
-    "initialize": "./scripts/cga.sh",
-    "test": "npm test"
+    "create-gen3-app-js": "node index.js",
+    "create-gen3-app": "./scripts/cga.sh"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/uc-cdis/create-gen3-app#readme",
   "dependencies": {
-    "create-react-app": "^2.0.0-next.3e165448"
+    "create-react-app": "^2.0.0-next.3e165448",
+    "shelljs": "^0.8.2"
   }
 }

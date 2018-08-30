@@ -1,6 +1,5 @@
 #!/bin/bash
 currentDir=$(pwd)
-cd ..
 npm init react-app $1
 cd $1
 npm install --save '@gen3/ui-component'
