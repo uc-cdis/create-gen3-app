@@ -1,12 +1,11 @@
 {
   "name": "@gen3/create-app",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
-    "create-gen3-app-js": "node index.js",
-    "create-gen3-app": "./scripts/cga.sh"
+    "create-gen3-app": "node index.js"
   },
   "repository": {
     "type": "git",
