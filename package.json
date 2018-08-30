@@ -4,7 +4,7 @@
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
   "scripts": {
-    "initialize": ". scripts/cga.sh",
+    "initialize": "./scripts/cga.sh",
     "test": "npm test"
   },
   "author": "",
