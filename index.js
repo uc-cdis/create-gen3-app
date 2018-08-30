@@ -4,7 +4,6 @@ var path = require('path');
 
 const newApp = process.argv.slice(2);
 const gen3Dir = path.join(__dirname);
-console.log('current directory:', gen3Dir);
 
 console.log('Creating a new Gen3 app using create-react-app...');
 console.log();
@@ -23,6 +22,8 @@ shell.cp(`${gen3Dir}/src/App.css`, 'src/App.css');
 
 console.log();
 console.log('Gen3 app successfully created!');
+console.log();
 console.log('Run the following commands to get started:');
 console.log(`cd ${newApp}`);
 console.log('npm start');
+console.log();
