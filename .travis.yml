@@ -10,8 +10,3 @@ cache:
 
 install:
     - npm install --force
-
-script:
-    - npm test
-    - npm run eslint
-    - npm run stylelint
