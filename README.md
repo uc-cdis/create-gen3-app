@@ -22,7 +22,10 @@ It can be run with `npm start`.
 ## Running with Dockerfile
 
 Clone this repo and then:
-`docker build -t cga .`
-`docker run --rm -ti -p 3000:3000 cga`
+```
+npm install
+docker build -t cga .`
+docker run --rm -ti -p 3000:3000 cga
+```
 
 then navigate to http://localhost:3000
