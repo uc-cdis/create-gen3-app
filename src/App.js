@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@gen3/ui-component/dist/components/button/Button';
+import Button from '@gen3/ui-component/dist/components/Button';
 import './App.css';
 
 class App extends Component {
