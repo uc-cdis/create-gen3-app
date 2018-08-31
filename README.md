@@ -2,13 +2,21 @@
 Create Gen3 apps without configuration.
 
 # Without cloning:
-Run `npx @gen3/create-app {my-new-repo-name}`
-Then run `cd {my-new-repo-name}` and `npm start` to run the new app locally.
+Run the following commands:
+```
+npx @gen3/create-app {my-new-repo-name}`
+cd {my-new-repo-name}
+npm start
+```
 
 # With cloning the repo:
 ## Running with npm
-Clone this repository and then run `npm run initialize {my-new-repo-name}`
-In the directory above this repository, there will be a boilerplate app created with the name `{my-repo-name}`.
+Clone this repository and then run the following commands from the repo:
+```
+npm install
+npm run initialize {my-new-repo-name}
+```
+Within the repository, there will be a boilerplate app created with the name `{my-repo-name}`.
 It can be run with `npm start`.
 
 ## Running with Dockerfile
