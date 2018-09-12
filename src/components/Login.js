@@ -4,8 +4,8 @@ import { getToken } from '../api/login';
 
 class Login extends Component {
   render() {
-    const { origin, commonsName } = this.props.location.query;
-    const redirectUrl = getToken(commonsName, origin);
+    const { origin, commonsPath } = this.props.location.query;
+    const redirectUrl = getToken(commonsPath, origin);
     return (
       <Redirect to={redirectUrl} />
     );
