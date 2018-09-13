@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { handleLoginCompletion } from '../api/login';
 import Homepage from './Homepage';
-import Login from './Login';
 
 class App extends Component {
   render() {
@@ -11,7 +11,12 @@ class App extends Component {
           <Switch>
             <Route
               path='/login'
-              component={Login}
+              render={() => {
+                handleLoginCompletion()
+                return (
+                  <Redirect to='/' />
+                )
+              }}
             />
             <Route
               path='/'
