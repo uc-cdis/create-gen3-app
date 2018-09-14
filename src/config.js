@@ -2,17 +2,20 @@ const commonsList = [
   {
     'name': 'Brain Commons',
     'tokenPath': 'bhc',
-    'url': 'https://qa-brain.planx-pla.net',
   },
   {
     'name': 'DCP',
     'tokenPath': 'dcp',
-    'url': 'https://qa-dcp.planx-pla.net',
   },
 ];
 
+const commonsUrls = {
+  bhc: 'https://accounts.google.com/o/oauth2/v2/auth',
+  dcp: 'https://accounts.google.com/o/oauth2/v2/auth',
+};
+
 module.exports = {
-  clientId: process.env.CLIENT_ID || 'client123',
+  clientId: process.env.REACT_APP_CLIENT_ID,
   commonsList: commonsList,
-  redirectUrl: process.env.REDIRECT_URL,
+  commonsUrls: commonsUrls,
 };

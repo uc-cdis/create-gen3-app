@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@gen3/ui-component/dist/components/Button';
-import { getToken } from '../api/login';
-import { authorize } from '../api/mockService';
+import { getToken, loginRedirect } from '../api/login';
 import { commonsList } from '../config';
 import './Homepage.css';
 
@@ -19,7 +18,7 @@ class Homepage extends Component {
               key={i}
               className='homepage__login-button btn-primary-orange'
               label={`Log into ${commons.name}`}
-              onClick={() => authorize('123', this.props.location.pathname + 'login', commons.tokenPath)}
+              onClick={() => loginRedirect(commons.tokenPath, window.location.href)}
             />
           )
         }
