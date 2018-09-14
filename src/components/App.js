@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { handleLoginCompletion } from '../api/login';
 import Homepage from './Homepage';
 
@@ -13,9 +13,7 @@ class App extends Component {
               path='/login'
               render={() => {
                 handleLoginCompletion()
-                return (
-                  <Redirect to='/' />
-                )
+                return (null);
               }}
             />
             <Route
