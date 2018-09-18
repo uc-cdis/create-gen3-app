@@ -18,7 +18,7 @@ class Homepage extends Component {
               key={i}
               className='homepage__login-button btn-primary-orange'
               label={`Log into ${commons.name}`}
-              onClick={() => loginRedirect(commons.tokenPath, window.location.href)}
+              onClick={() => loginRedirect(commons, window.location.href)}
             />
           )
         }
