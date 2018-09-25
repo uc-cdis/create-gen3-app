@@ -22,7 +22,7 @@ export const loginRedirect = (commons, location) => {
   const redirectUri = encodeURI(`${location}login`);
   sessionStorage.setItem('commonsLogin', commons.tokenPath);
   sessionStorage.setItem('origin', location);
-  window.location = `${commons.authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=openid`
+  window.location = `${commons.authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=openid`;
 };
 
 /**
