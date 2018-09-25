@@ -1,6 +1,6 @@
 {
   "name": "@gen3/create-app",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
   "bin": "./index.js",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/uc-cdis/create-gen3-app#readme",
   "dependencies": {
     "create-react-app": "^2.0.0-next.3e165448",
+    "react-router-dom": "^4.3.1",
     "shelljs": "^0.8.2"
   }
 }
