@@ -19,10 +19,13 @@ export const getToken = (commonsName) => {
  @param { string } location - the current url location.
  */
 export const loginRedirect = (commons, location) => {
-  const redirectUri = encodeURI(`${location}login`);
+  const base_url = location.split('?')[0].split('#')[0];
+  const redirectUri = encodeURIComponent(`${base_url}`);
+  const responseType='id_token+token';
+  const scope='openid+user'
   sessionStorage.setItem('commonsLogin', commons.tokenPath);
   sessionStorage.setItem('origin', location);
-  window.location = `${commons.authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&scope=openid`;
+  window.location = `${commons.authUrl}?client_id=${commons.clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
 };
 
 /**
@@ -31,7 +34,7 @@ export const loginRedirect = (commons, location) => {
  @param { object } token - the token to be saved.
  */
 export const saveToken = (commonsName, token) => {
-  const authToken = JSON.stringify({ token });
+  const authToken = JSON.stringify(token);
   sessionStorage.setItem(commonsName, authToken);
 };
 
@@ -42,7 +45,11 @@ export const saveToken = (commonsName, token) => {
  and the location of the user when login initiated.
  */
 export const handleLoginCompletion = () => {
-  const responseValues = window.location.href.split('#').pop();
+  const fragments = window.location.href.split('#');
+  if (fragments.length === 1) {
+    return
+  }
+  const responseValues = fragments[1];
   const tokenParams = querystring.parse(responseValues);
   const origin = sessionStorage.getItem('origin');
   const commons = sessionStorage.getItem('commonsLogin');
