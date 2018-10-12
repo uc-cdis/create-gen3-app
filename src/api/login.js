@@ -1,5 +1,5 @@
 import querystring from 'querystring';
-import { clientId } from '../config';
+import config from '../config';
 
 /**
  Fetches the user's access token for a specific commons from session storage.
@@ -15,17 +15,15 @@ export const getToken = (commonsName) => {
  Redirects the user to the authorization endpoint for a specific commons.
  Before doing this, stores the commons to be logged into and the current location
  in session storage for later use.
- @param { object } comons - an object containing information about the commons to log into.
+ @param { object } commons - an object containing information about the commons to log into.
  @param { string } location - the current url location.
  */
 export const loginRedirect = (commons, location) => {
-  const base_url = location.split('?')[0].split('#')[0];
-  const redirectUri = encodeURIComponent(`${base_url}`);
-  const responseType='id_token+token';
-  const scope='openid+user'
+  const baseUrl = config.baseUrl || location.split('?')[0].split('#')[0];
+  const redirectUri = encodeURIComponent(`${baseUrl}`);
   sessionStorage.setItem('commonsLogin', commons.tokenPath);
   sessionStorage.setItem('origin', location);
-  window.location = `${commons.authUrl}?client_id=${commons.clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+  window.location = `${commons.authUrl}?client_id=${commons.clientId}&redirect_uri=${redirectUri}&response_type=${config.oauthResponseType}&scope=${config.oauthScope}`;
 };
 
 /**
@@ -53,7 +51,9 @@ export const handleLoginCompletion = () => {
   const tokenParams = querystring.parse(responseValues);
   const origin = sessionStorage.getItem('origin');
   const commons = sessionStorage.getItem('commonsLogin');
-  saveToken(commons, tokenParams);
+  if (tokenParams && !tokenParams.error) {
+    saveToken(commons, tokenParams);
+  }
   sessionStorage.removeItem('commonsLogin');
   sessionStorage.removeItem('origin');
   window.location = origin;

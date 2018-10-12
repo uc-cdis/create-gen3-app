@@ -1,3 +1,5 @@
+const env = process.env.REACT_APP_ENV || 'dev';
+
 const commonsList = [
   {
     'name': 'Kids First',
@@ -13,6 +15,13 @@ const commonsList = [
   },
 ];
 
+const baseUrl = env === 'dev' ? `${window.location}build/index.html` : null;
+const oauthResponseType='id_token+token';
+const oauthScope='openid+user'
+
 module.exports = {
   commonsList,
+  baseUrl,
+  oauthResponseType,
+  oauthScope,
 };

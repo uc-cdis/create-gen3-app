@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CommonsLogin from '@gen3/ui-component/dist/components/CommonsLogin';
 import Header from '@gen3/ui-component/dist/components/Header';
-import { getToken, loginRedirect } from '../api/login';
+import { getToken, loginRedirect, handleLoginCompletion } from '../api/login';
 import { commonsList } from '../config';
 import kfLogo from '../images/kf-logo.png';
 import dcpLogo from '../images/dcp-logo.png';
@@ -11,7 +11,7 @@ import './Homepage.css';
 class Homepage extends Component {
   render() {
     handleLoginCompletion();
-    const images = { bhcLogo, dcpLogo, gen3Logo };
+    const images = { kfLogo, dcpLogo, gen3Logo };
     return (
       <div className='homepage'>
         <Header title='Welcome to Gen3' logoSrc={gen3Logo} />
