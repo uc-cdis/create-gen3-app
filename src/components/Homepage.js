@@ -31,6 +31,8 @@ class Homepage extends Component {
                     buttonTitle={connected ? 'Disconnect' : 'Connect'}
                     onButtonClick={connected ? () => this.logout(commons) : () => loginRedirect(commons, window.location.href)}
                     buttonEnabled={true}
+                    buttonType={connected ? 'primary' : 'secondary'}
+                    message={connected ? 'Connected!' : null}
                   />
                 </div>
               )
