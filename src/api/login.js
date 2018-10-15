@@ -51,3 +51,7 @@ export const handleLoginCompletion = () => {
   sessionStorage.removeItem('origin');
   window.location = origin;
 };
+
+export const logout = (commons) => {
+  sessionStorage.removeItem(commons.tokenPath);
+}
