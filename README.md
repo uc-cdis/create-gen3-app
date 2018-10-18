@@ -9,8 +9,9 @@ cd {my-new-repo-name}
 npm start
 ```
 
-If you encounter an error similar to the follow:
-```There might be a problem with the project dependency tree.
+If you encounter an error similar to the following:
+```
+There might be a problem with the project dependency tree.
 It is likely not a bug in Create React App, but something you need to fix locally.
 ```
 
