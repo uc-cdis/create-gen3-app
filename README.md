@@ -23,7 +23,7 @@ This can be fixed with:
 Clone this repository and then run the following commands from the repo:
 ```
 npm install
-npm run initialize {my-new-repo-name}
+npm run create-gen3-app {my-new-repo-name}
 ```
 Within the repository, there will be a boilerplate app created with the name `{my-repo-name}`.
 It can be run with `npm start`.
