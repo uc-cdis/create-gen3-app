@@ -19,6 +19,7 @@ shell.exec("npm install --save '@gen3/ui-component'");
 shell.exec('npm install');
 shell.exec('rm -rf src');
 shell.exec(`cp -fR ${gen3Dir}/src src`);
+shell.exec(`cp ${gen3Dir}/.env .`)
 
 console.log();
 console.log('Gen3 app successfully created!');

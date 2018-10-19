@@ -1,6 +1,6 @@
 {
   "name": "@gen3/create-app",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Create Gen3 apps without configuration.",
   "main": "index.js",
   "bin": "./index.js",

@@ -1,17 +1,27 @@
+const env = process.env.REACT_APP_ENV || 'dev';
+
 const commonsList = [
   {
-    'name': 'Brain Commons',
-    'tokenPath': 'bhc',
-    'authUrl': 'https://accounts.google.com/o/oauth2/v2/auth',
+    'name': 'Kids First',
+    'tokenPath': 'kf',
+    'authUrl': 'https://qa-kidsfirst.planx-pla.net/user/oauth2/authorize',
+    'clientId': process.env.REACT_APP_CLIENT_ID_KF,
   },
   {
-    'name': 'DCP',
+    'name': 'DCP & Data STAGE',
     'tokenPath': 'dcp',
-    'authUrl': 'https://accounts.google.com/o/oauth2/v2/auth',
+    'authUrl': 'https://qa-dcp.planx-pla.net/user/oauth2/authorize',
+    'clientId': process.env.REACT_APP_CLIENT_ID_DCP,
   },
 ];
 
+const baseUrl = env === 'dev' ? `${window.location}build/index.html` : null;
+const oauthResponseType='id_token+token';
+const oauthScope='openid+user'
+
 module.exports = {
-  clientId: process.env.REACT_APP_CLIENT_ID,
   commonsList,
+  baseUrl,
+  oauthResponseType,
+  oauthScope,
 };
