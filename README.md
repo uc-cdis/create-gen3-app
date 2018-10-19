@@ -1,7 +1,7 @@
 # create-gen3-app
 Create Gen3 apps without configuration.
 
-# Without cloning:
+# Without cloning (*recommended*):
 Run the following commands:
 ```
 npx @gen3/create-app {my-new-repo-name}`
