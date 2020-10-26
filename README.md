@@ -40,4 +40,4 @@ docker run --rm -ti -p 3000:3000 cga
 then navigate to http://localhost:3000
 
 # Configuration for logging into commons
-There is some example configuration for connecting to commons in `src/config.js`. The authorization url for a commons must be specified, and an environment variable for that commons set with the client ID is needed for Fence. 
+There is some example configuration for connecting to commons in `src/config.js`. The authorization url for a commons must be specified, and an environment variable for that commons set with the client ID is needed for Fence.
