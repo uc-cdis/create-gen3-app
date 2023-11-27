@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/uc-cdis/create-gen3-app#readme",
   "dependencies": {
-    "create-react-app": "^2.0.0-next.3e165448",
+    "create-react-app": "^3.0.0",
     "react-router-dom": "^4.3.1",
     "shelljs": "^0.8.2"
   }
